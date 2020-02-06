@@ -1,18 +1,20 @@
 # api
 
-*Api* is a part of *yagogame*. 
-*Yagogame* - is yet another Go game on the Go, made just for fun.
+**Api** is a part of **yagogame**. 
+**Yagogame** - is yet another Go game on the Go, made just for fun.
 
-*Api* implements a protobuf api of *grpc_server*.
+**Api** implements a protobuf api of **grpc_server**.
 
 ## Contribution
-Any modification in **api.proto** file should be followed by run of 
+Any modification in *api.proto* file should be followed by run of
+
 `go generate`
+
 to modify a module.
 
 ## License
 
-The *Api* is part of yagogame.
+The **Api** is part of yagogame.
 
 yagogame is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
