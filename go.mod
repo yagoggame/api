@@ -1,4 +1,4 @@
-module gogame/api
+module github.com/yagoggame/api
 
 go 1.13
 
