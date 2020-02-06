@@ -5,10 +5,20 @@
 
 **Api** implements a protobuf api of **grpc_server**.
 
+## Installation
+
+To install this package, you need to install Go and setup your Go workspace on your computer. The simplest way to install the library is to run:
+
+`$ go get -u github.com/yagoggame/api`
+
+With Go module support (Go 1.11+), simply import `github.com/yagoggame/api` in your source code and `go [build|run|test]` will automatically download the necessary dependencies 
+[Go modules ref](https://github.com/golang/go/wiki/Modules).
+
 ## Contribution
+
 Any modification in *api.proto* file should be followed by run of
 
-`go generate`
+`$ go generate`
 
 to modify a module.
 
