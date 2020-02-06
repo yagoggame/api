@@ -11,7 +11,7 @@ To install this package, you need to install Go and setup your Go workspace on y
 
 `$ go get -u github.com/yagoggame/api`
 
-With Go module support (Go 1.11+), simply import `google.golang.org/grpc` in your source code and `go [build|run|test]` will automatically download the necessary dependencies 
+With Go module support (Go 1.11+), simply import `github.com/yagoggame/api` in your source code and `go [build|run|test]` will automatically download the necessary dependencies 
 [Go modules ref](https://github.com/golang/go/wiki/Modules).
 
 ## Contribution
