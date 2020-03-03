@@ -102,27 +102,81 @@ func (m *TurnMessage) GetY() int64 {
 	return 0
 }
 
+type NewRequisits struct {
+	Login                string   `protobuf:"bytes,1,opt,name=login,proto3" json:"login,omitempty"`
+	Password             string   `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *NewRequisits) Reset()         { *m = NewRequisits{} }
+func (m *NewRequisits) String() string { return proto.CompactTextString(m) }
+func (*NewRequisits) ProtoMessage()    {}
+func (*NewRequisits) Descriptor() ([]byte, []int) {
+	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
+}
+
+func (m *NewRequisits) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NewRequisits.Unmarshal(m, b)
+}
+func (m *NewRequisits) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NewRequisits.Marshal(b, m, deterministic)
+}
+func (m *NewRequisits) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NewRequisits.Merge(m, src)
+}
+func (m *NewRequisits) XXX_Size() int {
+	return xxx_messageInfo_NewRequisits.Size(m)
+}
+func (m *NewRequisits) XXX_DiscardUnknown() {
+	xxx_messageInfo_NewRequisits.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_NewRequisits proto.InternalMessageInfo
+
+func (m *NewRequisits) GetLogin() string {
+	if m != nil {
+		return m.Login
+	}
+	return ""
+}
+
+func (m *NewRequisits) GetPassword() string {
+	if m != nil {
+		return m.Password
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*EmptyMessage)(nil), "api.EmptyMessage")
 	proto.RegisterType((*TurnMessage)(nil), "api.TurnMessage")
+	proto.RegisterType((*NewRequisits)(nil), "api.NewRequisits")
 }
 
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 192 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4c, 0x2c, 0xc8, 0xd4,
-	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4e, 0x2c, 0xc8, 0x54, 0xe2, 0xe3, 0xe2, 0x71, 0xcd,
-	0x2d, 0x28, 0xa9, 0xf4, 0x4d, 0x2d, 0x2e, 0x4e, 0x4c, 0x4f, 0x55, 0xd2, 0xe4, 0xe2, 0x0e, 0x29,
-	0x2d, 0xca, 0x83, 0x72, 0x85, 0x78, 0xb8, 0x18, 0x2b, 0x24, 0x18, 0x15, 0x18, 0x35, 0x98, 0x83,
-	0x18, 0x2b, 0x40, 0xbc, 0x4a, 0x09, 0x26, 0x08, 0xaf, 0xd2, 0xe8, 0x32, 0x13, 0x17, 0x9b, 0x7b,
-	0xbe, 0x7b, 0x62, 0x6e, 0xaa, 0x90, 0x39, 0x17, 0xaf, 0x6b, 0x5e, 0x49, 0x6a, 0x51, 0x48, 0x46,
-	0xaa, 0x4f, 0x7e, 0x52, 0x52, 0xa5, 0x90, 0xa0, 0x1e, 0xc8, 0x1e, 0x64, 0x93, 0xa5, 0x30, 0x85,
-	0x94, 0x18, 0x40, 0x1a, 0x7d, 0x52, 0x13, 0xcb, 0x52, 0x49, 0xd6, 0x68, 0xca, 0xc5, 0xed, 0x95,
-	0x9f, 0x99, 0x17, 0x92, 0x91, 0x0a, 0x76, 0x00, 0x09, 0xda, 0xc2, 0x13, 0x33, 0x4b, 0x42, 0x32,
-	0x52, 0x41, 0xbe, 0x24, 0x5a, 0x9b, 0x19, 0x17, 0x0f, 0xcc, 0x99, 0x24, 0x59, 0x67, 0xc8, 0xc5,
-	0xe1, 0x9b, 0x98, 0x0d, 0xb1, 0x4b, 0x00, 0xac, 0x00, 0x29, 0x70, 0xb1, 0x6a, 0x49, 0x62, 0x03,
-	0x47, 0x8e, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x9c, 0x4b, 0xe2, 0x53, 0xa9, 0x01, 0x00, 0x00,
+	// 284 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x92, 0xcd, 0x4b, 0x03, 0x31,
+	0x10, 0xc5, 0x5d, 0xab, 0xa5, 0x3b, 0x4d, 0x45, 0xa3, 0x87, 0xd2, 0x93, 0xec, 0x49, 0x2f, 0x05,
+	0xbf, 0xda, 0x93, 0x20, 0x48, 0x29, 0x48, 0xeb, 0x21, 0xac, 0x78, 0xce, 0xe2, 0xb0, 0x1b, 0x74,
+	0x93, 0x98, 0xa4, 0x1f, 0x7b, 0xf3, 0x4f, 0x97, 0xcd, 0xfa, 0xb1, 0xd0, 0x1e, 0xba, 0xc7, 0x17,
+	0xde, 0x8f, 0xf7, 0x26, 0x33, 0x10, 0x72, 0x2d, 0x86, 0xda, 0x28, 0xa7, 0x68, 0x8b, 0x6b, 0x11,
+	0x1d, 0x01, 0x99, 0xe4, 0xda, 0x15, 0x73, 0xb4, 0x96, 0xa7, 0x18, 0x5d, 0x42, 0x37, 0x5e, 0x18,
+	0xf9, 0x23, 0x29, 0x81, 0x60, 0xdd, 0x0f, 0xce, 0x83, 0x8b, 0x16, 0x0b, 0xd6, 0xa5, 0x2a, 0xfa,
+	0xfb, 0x95, 0x2a, 0xa2, 0x07, 0x20, 0xcf, 0xb8, 0x62, 0xf8, 0xb9, 0x10, 0x56, 0x38, 0x4b, 0xcf,
+	0xe0, 0xf0, 0x43, 0xa5, 0x42, 0x7a, 0x7f, 0xc8, 0x2a, 0x41, 0x07, 0xd0, 0xd1, 0xdc, 0xda, 0x95,
+	0x32, 0x6f, 0x1e, 0x0d, 0xd9, 0x9f, 0xbe, 0xfe, 0x3a, 0x80, 0xf6, 0x54, 0x4d, 0x79, 0x8e, 0x74,
+	0x04, 0x84, 0x61, 0x2a, 0xac, 0x43, 0xf3, 0x62, 0xd1, 0xd0, 0x93, 0x61, 0x59, 0xb4, 0x5e, 0x6d,
+	0xb0, 0xf9, 0x14, 0xed, 0xd1, 0x5b, 0x00, 0x86, 0xb9, 0x5a, 0x62, 0x23, 0xea, 0x1e, 0x4e, 0x1f,
+	0x33, 0x2e, 0x53, 0x4f, 0xfd, 0x4f, 0x50, 0x79, 0xeb, 0x43, 0x6d, 0xc7, 0xc7, 0xd0, 0x9b, 0x48,
+	0x87, 0x26, 0xce, 0x70, 0xa6, 0x92, 0xa4, 0xd8, 0x39, 0x77, 0x0c, 0xbd, 0x19, 0xf2, 0x25, 0x36,
+	0x06, 0xef, 0xa0, 0xfb, 0xa4, 0x84, 0x8c, 0x33, 0xf4, 0xbf, 0xd5, 0x00, 0x7b, 0xe5, 0xc2, 0xc5,
+	0x19, 0x96, 0x4b, 0xdd, 0x19, 0x1b, 0x01, 0xf9, 0xad, 0xd9, 0x28, 0xee, 0x0a, 0x3a, 0x73, 0xfe,
+	0x5e, 0x65, 0x1d, 0x7b, 0x43, 0xed, 0x96, 0xb6, 0x22, 0x49, 0xdb, 0xdf, 0xe2, 0xcd, 0x77, 0x00,
+	0x00, 0x00, 0xff, 0xff, 0x2e, 0x1a, 0x5e, 0x4d, 0x98, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -137,6 +191,10 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GoGameClient interface {
+	// User
+	RegisterUser(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error)
+	RemoveUser(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error)
+	ChangeUserRequisits(ctx context.Context, in *NewRequisits, opts ...grpc.CallOption) (*EmptyMessage, error)
 	// Control game flow
 	EnterTheLobby(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error)
 	LeaveTheLobby(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error)
@@ -152,6 +210,33 @@ type goGameClient struct {
 
 func NewGoGameClient(cc grpc.ClientConnInterface) GoGameClient {
 	return &goGameClient{cc}
+}
+
+func (c *goGameClient) RegisterUser(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error) {
+	out := new(EmptyMessage)
+	err := c.cc.Invoke(ctx, "/api.GoGame/RegisterUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *goGameClient) RemoveUser(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error) {
+	out := new(EmptyMessage)
+	err := c.cc.Invoke(ctx, "/api.GoGame/RemoveUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *goGameClient) ChangeUserRequisits(ctx context.Context, in *NewRequisits, opts ...grpc.CallOption) (*EmptyMessage, error) {
+	out := new(EmptyMessage)
+	err := c.cc.Invoke(ctx, "/api.GoGame/ChangeUserRequisits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *goGameClient) EnterTheLobby(ctx context.Context, in *EmptyMessage, opts ...grpc.CallOption) (*EmptyMessage, error) {
@@ -210,6 +295,10 @@ func (c *goGameClient) MakeTurn(ctx context.Context, in *TurnMessage, opts ...gr
 
 // GoGameServer is the server API for GoGame service.
 type GoGameServer interface {
+	// User
+	RegisterUser(context.Context, *EmptyMessage) (*EmptyMessage, error)
+	RemoveUser(context.Context, *EmptyMessage) (*EmptyMessage, error)
+	ChangeUserRequisits(context.Context, *NewRequisits) (*EmptyMessage, error)
 	// Control game flow
 	EnterTheLobby(context.Context, *EmptyMessage) (*EmptyMessage, error)
 	LeaveTheLobby(context.Context, *EmptyMessage) (*EmptyMessage, error)
@@ -223,6 +312,15 @@ type GoGameServer interface {
 type UnimplementedGoGameServer struct {
 }
 
+func (*UnimplementedGoGameServer) RegisterUser(ctx context.Context, req *EmptyMessage) (*EmptyMessage, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterUser not implemented")
+}
+func (*UnimplementedGoGameServer) RemoveUser(ctx context.Context, req *EmptyMessage) (*EmptyMessage, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveUser not implemented")
+}
+func (*UnimplementedGoGameServer) ChangeUserRequisits(ctx context.Context, req *NewRequisits) (*EmptyMessage, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangeUserRequisits not implemented")
+}
 func (*UnimplementedGoGameServer) EnterTheLobby(ctx context.Context, req *EmptyMessage) (*EmptyMessage, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnterTheLobby not implemented")
 }
@@ -244,6 +342,60 @@ func (*UnimplementedGoGameServer) MakeTurn(ctx context.Context, req *TurnMessage
 
 func RegisterGoGameServer(s *grpc.Server, srv GoGameServer) {
 	s.RegisterService(&_GoGame_serviceDesc, srv)
+}
+
+func _GoGame_RegisterUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyMessage)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GoGameServer).RegisterUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.GoGame/RegisterUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GoGameServer).RegisterUser(ctx, req.(*EmptyMessage))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GoGame_RemoveUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyMessage)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GoGameServer).RemoveUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.GoGame/RemoveUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GoGameServer).RemoveUser(ctx, req.(*EmptyMessage))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GoGame_ChangeUserRequisits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NewRequisits)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GoGameServer).ChangeUserRequisits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.GoGame/ChangeUserRequisits",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GoGameServer).ChangeUserRequisits(ctx, req.(*NewRequisits))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _GoGame_EnterTheLobby_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -358,6 +510,18 @@ var _GoGame_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "api.GoGame",
 	HandlerType: (*GoGameServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "RegisterUser",
+			Handler:    _GoGame_RegisterUser_Handler,
+		},
+		{
+			MethodName: "RemoveUser",
+			Handler:    _GoGame_RemoveUser_Handler,
+		},
+		{
+			MethodName: "ChangeUserRequisits",
+			Handler:    _GoGame_ChangeUserRequisits_Handler,
+		},
 		{
 			MethodName: "EnterTheLobby",
 			Handler:    _GoGame_EnterTheLobby_Handler,

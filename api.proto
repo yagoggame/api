@@ -24,7 +24,16 @@ message TurnMessage {
 	int64 y = 2;
 }
 
+message NewRequisits {
+	string login    = 1;
+	string password = 2;
+}
+
 service GoGame {
+// User
+	rpc RegisterUser(EmptyMessage)  returns (EmptyMessage) {}
+	rpc RemoveUser(EmptyMessage)  returns (EmptyMessage) {}
+	rpc ChangeUserRequisits(NewRequisits)  returns (EmptyMessage) {}
 // Control game flow
 	rpc EnterTheLobby(EmptyMessage)	returns (EmptyMessage) {}
 	rpc LeaveTheLobby(EmptyMessage)	returns (EmptyMessage) {}
