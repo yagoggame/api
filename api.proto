@@ -29,6 +29,21 @@ message RequisitsMessage {
 	string password = 2;
 }
 
+message State{
+	message ColourState {
+		int64 chips_in_cap = 1;
+		int64 chips_captured = 2;
+		double scores = 3;
+		repeated TurnMessage chips_on_board = 4;
+		repeated TurnMessage points_under_control = 5;
+	}
+	double komi = 1;
+	bool game_over =2;
+	ColourState white = 3;
+	ColourState black = 4;
+	int64 size = 5; 
+}
+
 service GoGame {
 // User
 	rpc RegisterUser(EmptyMessage)  returns (EmptyMessage) {}
@@ -37,8 +52,8 @@ service GoGame {
 // Control game flow
 	rpc EnterTheLobby(EmptyMessage)	returns (EmptyMessage) {}
 	rpc LeaveTheLobby(EmptyMessage)	returns (EmptyMessage) {}
-	rpc JoinTheGame(EmptyMessage)	returns (EmptyMessage) {}
-	rpc WaitTheTurn(EmptyMessage)	returns (EmptyMessage) {}
+	rpc JoinTheGame(EmptyMessage)	returns (State) {}
+	rpc WaitTheTurn(EmptyMessage)	returns (State) {}
 	rpc LeaveTheGame(EmptyMessage)	returns (EmptyMessage) {}
-	rpc MakeTurn(TurnMessage)		returns (EmptyMessage) {}
+	rpc MakeTurn(TurnMessage)		returns (State) {}
 }
